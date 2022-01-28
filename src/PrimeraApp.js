@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Functional Components - Componentes basados en constantes
 
@@ -18,5 +19,10 @@ const PrimeraApp = ({ parentProp, propDefault = 'Default Value'}) => {
         </>
     );
 }
+
+PrimeraApp.propTypes = {
+    parentProp: PropTypes.string.isRequired,
+    propDefault: PropTypes.string,
+} 
 
 export default PrimeraApp;
