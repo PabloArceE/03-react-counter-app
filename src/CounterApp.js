@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 const CounterApp = ({value}) => {
 
-    const [counter, setCounter] = useState(0); 
+    const [counter, setCounter] = useState(value); 
     // hook que retorna un valor y la función para modificarlo; con esta desestructuración del arreglo que retorna el hook se obtienen dos constantes para trabajar con el valor y la función que lo modifica.
 
-    const handleAdd= () => {
-         setCounter(counter + 1);
-        // setCounter( c => c + 1);
-    };
+    const handleAdd= () => setCounter(counter + 1);        
+
+    const handleReset = () => setCounter(value);
+
+    const handleSub = () => setCounter(counter - 1);
 
     return (
         <>
@@ -17,6 +18,8 @@ const CounterApp = ({value}) => {
             <h2>{counter}</h2>
 
             <button onClick= {handleAdd}>+1</button>
+            <button onClick= {handleReset}>Reset</button>
+            <button onClick= {handleSub}>-1</button>
         </>
     )
 };
